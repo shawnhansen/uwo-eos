@@ -1,30 +1,318 @@
-<div class="header">
-	<ul class="nav nav-pills pull-right">
-		<li class="active"><a href="#">Home</a></li>
-		<li><a href="#">About</a></li>
-		<li><a href="#">Contact</a></li>
-	</ul>
-	<h3 class="text-muted">eos</h3>
-</div>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div id="pillar-carousel" class="carousel slide">
 
-<div class="jumbotron">
-	<h1>'Allo, 'Allo!</h1>
-	<p class="lead">Always a pleasure scaffolding your apps.</p>
-	<p><a class="btn btn-lg btn-success" href="#">Splendid!</a></p>
-</div>
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#pillar-carousel" data-slide-to="0" class="active"></li>
+      <li data-target="#pillar-carousel" data-slide-to="1"></li>
+      <li data-target="#pillar-carousel" data-slide-to="2"></li>
+      <li data-target="#pillar-carousel" data-slide-to="3"></li>
+    </ol>
 
-<div class="row marketing">
-	<h4>HTML5 Boilerplate</h4>
-	<p>HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.</p>
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img class="pillar-image" src="http://www.uwosh.edu/mu/img/pillar1.jpg" alt="Pillar 1" />
+        <div class="carousel-caption">
+          <h2 class="title">University of Wisconsin Oshkosh</h2>
+          <h3 class="subtitle">WHERE EXCELLENCE AND OPPORTUNITY MEET.</h3>
+        </div>
+      </div>
 
-	<h4>Angular</h4>
-	<p>AngularJS is a toolset for building the framework most suited to your application development.</p>
+      <div class="item">
+        <img class="pillar-image lazy" data-original="http://www.uwosh.edu/mu/img/pillar2.jpg" alt="Pillar 2" src="http://www.uwosh.edu/mu/img/grey.gif" />
+        <div class="carousel-caption">
+          <h2 class="title">University of Wisconsin Oshkosh</h2>
+          <h3 class="subtitle">WHERE EXCELLENCE AND OPPORTUNITY MEET.</h3>
+        </div>
+      </div>
 
-	<h4>Karma</h4>
-	<p>Spectacular Test Runner for JavaScript.</p>
-</div>
-</div>
+      <div class="item">
+        <img class="pillar-image lazy" data-original="http://www.uwosh.edu/mu/img/pillar3.jpg" alt="Pillar 3" src="http://www.uwosh.edu/mu/img/grey.gif" />
+        <div class="carousel-caption">
+          <h2 class="title">University of Wisconsin Oshkosh</h2>
+          <h3 class="subtitle">WHERE EXCELLENCE AND OPPORTUNITY MEET.</h3>
+        </div>
+      </div>
 
-<div class="footer">
-	<p>♥ from the Yeoman team</p>
+      <div class="item">
+        <img class="pillar-image lazy" data-original="http://www.uwosh.edu/mu/img/pillar4.jpg" alt="Pillar 4" src="http://www.uwosh.edu/mu/img/grey.gif" />
+        <div class="carousel-caption">
+          <h2 class="title">University of Wisconsin Oshkosh</h2>
+          <h3 class="subtitle">WHERE EXCELLENCE AND OPPORTUNITY MEET.</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#pillar-carousel" data-slide="prev">
+      <span class="icon-prev"></span>
+    </a>
+    <a class="right carousel-control" href="#pillar-carousel" data-slide="next">
+      <span class="icon-next"></span>
+    </a>
+  </div>
+
+  </div>
+</div><br>
+
+
+
+<div class="row">
+
+<!-- Call to Actions -->
+<div class="col-lg-3">
+  <div class="row">
+    <div class="col-lg-12 col-sm-4">
+      <a href="http://www.uwosh.edu/today">
+        <div class="cta cta-visit">
+          Visit Campus
+        </div>
+      </a>
+    </div>
+    <div class="col-lg-12 col-sm-4">
+      <a href="http://www.uwosh.edu/today">
+        <div class="cta cta-tour">
+          Take a Virtual Tour
+        </div>
+      </a>
+    </div>
+    <div class="col-lg-12 col-sm-4">
+      <a href="http://www.uwosh.edu/today">
+        <div class="cta cta-apply">
+          Apply Now
+        </div>
+      </a>
+    </div>
+  </div><br>
 </div>
+<!-- End Call to Actions -->
+
+<!-- Events -->
+<div class="col-lg-9">
+  <div class="row">
+    <div class="col-lg-12">
+      <h4>Events <small>View More Events -></small></h4>
+    </div>
+  </div>
+  <div class="row" ng-controller="EventsCtrl" ng-mouseenter="getTest">
+    <div class="col-lg-4 col-sm-4" ng-repeat="event in events|limitTo:3">
+      <div class="media">
+        <a class="pull-left" href="#">
+          <div class="event-calendar">
+            <div class="media-object event-month">{{ event.pubDate | cleanDate | date:'MMM' }}</div>
+            <div class="media-object event-day">{{ event.pubDate | cleanDate | date:'dd' }}</div>
+          </div>
+        </a>
+        <div class="media-body">
+          <h4 class="media-heading">{{ event.title }}</h4>
+          <div class="event-time">{{ event.pubDate | cleanDate | date }}</div>
+          <div class="event-location"><a href="{{ event.link }}">{{ event.link }}</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Events -->
+
+</div><br>
+
+<!-- News Feed -->
+<div class="row">
+
+
+  <div class="col-lg-4 col-sm-4" ng-controller="CampusNewsPanelCtrl">
+    <div panel-story></div>
+  </div>
+
+  <div class="col-lg-4 col-sm-4" ng-controller="ResearchNewsPanelCtrl">
+    <div panel-story></div>
+  </div>
+
+  <div class="col-lg-4 col-sm-4" ng-controller="PoweringCommunityPanelCtrl">
+    <div panel-story></div>
+  </div>
+
+</div><br>
+<!-- End News Feed -->
+
+<div class="row">
+<div class="col-lg-12">
+  <a href="http://www.uwosh.edu/today">
+    <div class="visit-uwot">
+      Visit UW Oshkosh Today for more <i class="fa fa-arrow-right"></i>
+    </div>
+  </a>
+</div>
+</div><br>
+
+<!-- Weekly Feed -->
+<div class="row">
+
+  <div class="col-lg-4 col-sm-4" ng-controller="UWOTWPanelCtrl">
+    <div panel-story></div>
+  </div>
+
+  <div class="col-lg-4 col-sm-4" ng-controller="AdmissionsPanelCtrl">
+    <div panel-story></div>
+  </div>
+
+  <div class="col-lg-4 col-sm-4" ng-controller="TitanPanelCtrl">
+    <div panel-story></div>
+  </div>
+
+</div><br>
+<!-- End Weekly Feed -->
+
+<!-- Chancellor Row -->
+<div class="row">
+
+  <div class="col-lg-4 col-sm-4" ng-controller="ChancellorPanelCtrl">
+    <div panel-story></div>
+  </div>
+
+  <div class="col-lg-4 col-sm-4" ng-controller="MeetUWOPanelCtrl">
+    <div panel-story></div>
+  </div>
+
+  <div class="col-lg-4 col-sm-4" ng-controller="TWIFPanelCtrl">
+    <div panel-story></div>
+  </div>
+
+</div><br>
+<!-- End Chancellor Row -->
+</div><!-- /.container -->
+
+<!-- Social Feed -->
+<div class="social-container">
+<div class="container container-overflow">
+<div class="row">
+  <div class="col-lg-12">
+
+    <ul class="nav nav-tabs pull-left" id="socialTabs">
+      <li class="active"><a href="#twitter"><i class="fa fa-fw fa-twitter"></i> Twitter</a></li>
+      <li><a href="#facebook"><i class="fa fa-fw fa-facebook"></i> Facebook</a></li>
+      <li><a href="#youtube"><i class="fa fa-fw fa-youtube"></i> YouTube</a></li>
+      <li><a href="#flickr"><i class="fa fa-fw fa-flickr"></i> Flickr</a></li>
+    </ul>
+
+    <script>
+      $('#socialTabs a').click(function (e) {
+        e.preventDefault();
+        $(this).tab('show');
+        $("img.lazy").show().lazyload();
+      })
+    </script>
+
+    <div class="tab-content">
+      <div class="tab-pane active" id="twitter">
+
+        <div class="deck-container">
+          <deck id="deck-twitter" ng-controller="TwitterCtrl">
+
+              <slide ng-repeat="tweet in tweets|limitTo:12">
+                <div class="twitter-article social-article">
+                  <div class="media">
+                    <a class="pull-left" href="https://twitter.com/{{ tweet.user.screen_name }}"><img class="media-object" src="{{ tweet.user.profile_image_url_https }}"></a>
+                    <div class="media-body">
+                      <div class="media-heading">
+                        <span class="tweetprofilelink">
+                          <strong>{{ tweet.user.name }}</strong> <a href="https://twitter.com/{{ tweet.user.screen_name }}">@{{ tweet.user.screen_name }}</a>
+                        </span><br>
+                        <span class="tweet-time">
+                          <a href="https://twitter.com/{{ tweet.user.screen_name }}/status/{{ tweet.id_str }}"><i class="fa fa-clock-o datetime"></i> <time class="datetime" datetime="{{ tweet.created_at }}">{{ tweet.created_at | fromNow }}</time></a>
+                        </span>
+                      </div>
+                      <p ng-bind-html="tweet.text | linky"></p>
+                      <p class="twitter-intents">
+                        <a href="https://twitter.com/intent/tweet?in_reply_to={{ tweet.id }}" target="_blank"><i class="fa fa-fw fa-reply"></i> Reply &nbsp;</a>
+                        <a href="https://twitter.com/intent/retweet?tweet_id={{ tweet.id }}" target="_blank"><i class="fa fa-fw fa-retweet"></i> Retweet &nbsp;</a>
+                        <a href="https://twitter.com/intent/favorite?tweet_id={{ tweet.id }}" target="_blank"><i class="fa fa-fw fa-star"></i> Favorite</a></p>
+                    </div>
+                  </div>
+                </div>
+              </slide>
+          </deck>
+        </div><!-- /.deck-container -->
+        <div class="social-controls">
+          <ul class="list-unstyled">
+            <li onClick="bespoke.prev()" class="previous"><i class="fa fa-lg fa-fw fa-arrow-left"></i></li>
+            <li onClick="bespoke.next()" class="next"><i class="fa fa-lg fa-fw fa-arrow-right pull-right"></i></li>
+          </ul>
+        </div>
+      </div><!-- /#twitter -->
+      <div class="tab-pane" id="facebook">
+
+        <div class="deck-container">
+          <deck id="deck-facebook" ng-controller="FacebookCtrl">
+
+              <slide ng-repeat="fbpost in fbposts|limitTo:12">
+                <div class="twitter-article social-article">
+                  <p>{{ fbpost.message }}&hellip; <a href="{{ fbpost.link }}">Read more</a></p>
+                  <span class="social-feed-date posted-date"><i class="fa fa-clock-o"></i> <time class="datetime" datetime="{{ fbpost.updated_time}}">{{ fbpost.updated_time | fromNow }}</time>
+                </div>
+              </slide>
+
+          </deck>
+        </div><!-- /.deck-container -->
+        <div class="social-controls">
+          <ul class="list-unstyled">
+            <li onClick="bespoke.prev()" class="previous"><i class="fa fa-lg fa-fw fa-arrow-left"></i></li>
+            <li onClick="bespoke.next()" class="next"><i class="fa fa-lg fa-fw fa-arrow-right pull-right"></i></li>
+          </ul>
+        </div>
+      </div>
+      <div class="tab-pane" id="youtube">
+
+        <div class="deck-container">
+          <deck id="deck-youtube" ng-controller="YouTubeCtrl">
+
+              <slide ng-repeat="video in videos|limitTo:12">
+                <div class="twitter-article social-article">
+                  <div class="youtube" id="{{video.id}}" style="height:160px;"></div>
+                  <h5>{{ video.title }}</h5>
+                  <span class="social-feed-date posted-date"><i class="fa fa-clock-o"></i> <time class="datetime" datetime="{{ video.updated }}">{{ video.updated | fromNow }}</time></span>
+                </div>
+              </slide>
+
+          </deck>
+        </div><!-- /.deck-container -->
+        <div class="social-controls">
+          <ul class="list-unstyled">
+            <li onClick="bespoke.prev()" class="previous"><i class="fa fa-lg fa-fw fa-arrow-left"></i></li>
+            <li onClick="bespoke.next()" class="next"><i class="fa fa-lg fa-fw fa-arrow-right pull-right"></i></li>
+          </ul>
+        </div>
+      </div>
+      <div class="tab-pane" id="flickr">
+
+        <div class="deck-container">
+          <deck id="deck-flickr" ng-controller="FlickrCtrl">
+
+              <slide ng-repeat="photoset in photosets|limitTo:12">
+                <div class="twitter-article social-article">
+                  <p><a href="http://www.flickr.com/photos/37901018@N05/sets/{{ photoset.id }}"><img src="http://farm{{ photoset.farm }}.static.flickr.com/{{ photoset.server }}/{{ photoset.primary }}_{{ photoset.secret }}_m.jpg" class="social-feed-flickr-image"></a></p>
+                  <h5></h5>
+                  <span class="social-feed-date posted-date"><i class="fa fa-clock-o"></i> <time class="datetime" datetime="{{ photoset.date_update }}">{{ photoset.date_update | fromNow }}</time></span>
+                </div>
+              </slide>
+
+          </deck>
+        </div><!-- /.deck-container -->
+        <div class="social-controls">
+          <ul class="list-unstyled">
+            <li onClick="bespoke.prev()" class="previous"><i class="fa fa-lg fa-fw fa-arrow-left"></i></li>
+            <li onClick="bespoke.next()" class="next"><i class="fa fa-lg fa-fw fa-arrow-right pull-right"></i></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /.col-lg-12 -->
+</div><br><!-- /.row -->
+
+</div><!-- /.container -->
+
+</div><!-- /.social-container -->

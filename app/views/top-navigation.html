@@ -1,0 +1,46 @@
+<div ng-controller="TopNavCtrl">
+  <nav class="navbar navbar-inverse navbar-static-top university-nav" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+      <!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+
+      <div class="navbar-collapse collapse navbar-responsive-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="#/about-uw-oshkosh" ng-mouseenter="hover(navitems.about)" ng-mouseleave="hover(navitems.about)">{{navitems.about.name}}</a></li>
+          <li><a href="#" ng-mouseenter="hover(navitems.academics)" ng-mouseleave="hover(navitems.academics)">{{navitems.academics.name}}</a></li>
+          <li><a href="#" ng-mouseenter="hover(navitems.athletics)" ng-mouseleave="hover(navitems.athletics)">{{navitems.athletics.name}}</a></li>
+          <li><a href="#" ng-mouseenter="hover(navitems.alumni)" ng-mouseleave="hover(navitems.alumni)">{{navitems.alumni.name}}</a></li>
+          <li><a href="#" ng-mouseenter="hover(navitems.admissions)" ng-mouseleave="hover(navitems.admissions)">{{navitems.admissions.name}}</a></li>
+          <li><a href="#/administration" ng-mouseenter="hover(navitems.administration)" ng-mouseleave="hover(navitems.administration)">{{navitems.administration.name}}</a></li>
+          <li><a href="#" ng-mouseenter="hover(navitems.resources)" ng-mouseleave="hover(navitems.resources)">{{navitems.resources.name}}</a></li>
+          <li><a href="#" ng-mouseenter="hover(navitems.calendars)" ng-mouseleave="hover(navitems.calendars)">{{navitems.calendars.name}}</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              {{navitems.titanServices.name}} <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li ng-repeat="item in navitems.titanServices.submenu"><a href="#">{{item.name}}</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div><!-- /.nav-collapse -->
+    </div><!-- /.container -->
+  </nav><!-- /.navbar -->
+
+  <div drawer-about></div>
+  <div drawer-academics></div>
+  <div drawer-athletics></div>
+  <div drawer-alumni></div>
+  <div drawer-admissions></div>
+  <div drawer-administration></div>
+  <div drawer-resources></div>
+  <div drawer-calendars></div>
+
+</div>

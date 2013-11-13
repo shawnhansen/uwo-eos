@@ -1,0 +1,14 @@
+<div class="panel panel-default panel-home {{ slug }}">
+  <div class="panel-body">
+    <span class="category"><a href="{{ categoryURL }}" target="_blank">{{ post.category | uppercase }} <i class="fa fa-arrow-right"></i></a></span>
+    <h2 class="news-heading">{{ post.title }}</h2>
+    <div class="videoWrapper">
+      <img src="{{ post.thumbnail_images.medium.url }}" class="panel-image" />
+    </div><br>
+    <div>
+      <span ng-bind-html="excerpt | characters:130"></span><span> <a href="{{ post.url }}">Read more &hellip;</a></span>
+    </div>
+
+    <span class="posted-date"><i class="fa fa-clock-o datetime"></i> <time datetime="{{ post.date }}"> {{ post.date | fromNow }}</time></span>
+  </div>
+</div>

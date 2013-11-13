@@ -1,0 +1,27 @@
+<div id="aboutDrawer" class="nav-info" ng-show="navitems.about.showDrawer">
+  <div class="row content">
+    <div class="container">
+      <div class="col-lg-4">
+        <ul class="list-unstyled">
+          <li>Welcome from Chancellor Wells</li>
+          <li>Fast Facts</li>
+          <li>Leadership</li>
+          <li>Mission, Vision and Values</li>
+          <li>Arts and Culture</li>
+          <li>Employment</li>
+          <li>Contact Information</li>
+        </ul>
+      </div>
+      <div class="col-lg-4">
+        <p>Since 1871, the University of Wisconsin Oshkosh has been providing residents of northeastern Wisconsin with high-quality, affordable education through 60 undergraduate majors, 30 master&rsquo;s degree programs and one doctoral degree for our more than 13,500 students.</p>
+        <p ng-controller="WeatherCtrl">
+          <canvas id="weather1" width="42" height="42"></canvas> <span style="font-size:48px;">{{ weather.currently.temperature | number:0 }}&#176;</span><br>
+          {{ weather.hourly.summary }}
+        </p>
+      </div>
+      <div class="col-lg-4">
+        <img src="http://lorempixel.com/336/189/nature" >
+      </div><br>
+    </div>
+  </div>
+</div>
