@@ -13,6 +13,21 @@ AuthName "Eos"
 AuthUserFile /information/www/home_pages/departments/mu/.htpasswd
 Require valid-user
 
+# ------------------------------------------------------------------------------
+# | Rewrite Rules                                                 |
+# ------------------------------------------------------------------------------
+
+# angularjs pushstate (history) support:
+# See http://www.josscrowcroft.com/2012/code/htaccess-for-html5-history-pushstate-url-routing/
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /mu/
+    RewriteRule ^index\.html$ - [L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule . /mu/index.html [L]
+</IfModule>
+
 # ##############################################################################
 # # CROSS-ORIGIN RESOURCE SHARING (CORS)                                       #
 # ##############################################################################
