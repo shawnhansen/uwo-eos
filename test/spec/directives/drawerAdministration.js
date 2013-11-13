@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Directive: topNavigation', function () {
+describe('Directive: drawerAdministration', function () {
 
   // load the directive's module
   beforeEach(module('eosApp'));
@@ -13,8 +13,8 @@ describe('Directive: topNavigation', function () {
   }));
 
   /*it('should make hidden element visible', inject(function ($compile) {
-    element = angular.element('<top-navigation></top-navigation>');
+    element = angular.element('<drawer-administration></drawer-administration>');
     element = $compile(element)(scope);
-    expect(element.text()).toBe('this is the topNavigation directive');
+    expect(element.text()).toBe('this is the drawerAdministration directive');
   }));*/
 });

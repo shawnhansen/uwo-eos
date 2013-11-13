@@ -105,7 +105,8 @@ module.exports = function (grunt) {
     jshint: {
       options: {
         jshintrc: '.jshintrc',
-        reporter: require('jshint-stylish')
+        reporter: require('jshint-stylish'),
+        ignores: 'app/scripts/plugins/*'
       },
       all: [
         'Gruntfile.js',
@@ -323,6 +324,8 @@ module.exports = function (grunt) {
       }
     }
   });
+
+  grunt.loadNpmTasks('grunt-notify');
 
   grunt.registerTask('server', function (target) {
     if (target === 'dist') {

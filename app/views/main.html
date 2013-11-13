@@ -14,7 +14,7 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
       <div class="item active">
-        <img class="pillar-image" src="http://www.uwosh.edu/mu/img/pillar1.jpg" alt="Pillar 1" />
+        <img class="pillar-image" src="images/pillar1.jpg" alt="Pillar 1" />
         <div class="carousel-caption">
           <h2 class="title">University of Wisconsin Oshkosh</h2>
           <h3 class="subtitle">WHERE EXCELLENCE AND OPPORTUNITY MEET.</h3>
@@ -22,7 +22,7 @@
       </div>
 
       <div class="item">
-        <img class="pillar-image lazy" data-original="http://www.uwosh.edu/mu/img/pillar2.jpg" alt="Pillar 2" src="http://www.uwosh.edu/mu/img/grey.gif" />
+        <img class="pillar-image" src="images/pillar2.jpg" alt="Pillar 2" />
         <div class="carousel-caption">
           <h2 class="title">University of Wisconsin Oshkosh</h2>
           <h3 class="subtitle">WHERE EXCELLENCE AND OPPORTUNITY MEET.</h3>
@@ -30,7 +30,7 @@
       </div>
 
       <div class="item">
-        <img class="pillar-image lazy" data-original="http://www.uwosh.edu/mu/img/pillar3.jpg" alt="Pillar 3" src="http://www.uwosh.edu/mu/img/grey.gif" />
+        <img class="pillar-image" src="images/pillar3.jpg" alt="Pillar 3" />
         <div class="carousel-caption">
           <h2 class="title">University of Wisconsin Oshkosh</h2>
           <h3 class="subtitle">WHERE EXCELLENCE AND OPPORTUNITY MEET.</h3>
@@ -38,7 +38,7 @@
       </div>
 
       <div class="item">
-        <img class="pillar-image lazy" data-original="http://www.uwosh.edu/mu/img/pillar4.jpg" alt="Pillar 4" src="http://www.uwosh.edu/mu/img/grey.gif" />
+        <img class="pillar-image" src="images/pillar4.jpg" alt="Pillar 4" />
         <div class="carousel-caption">
           <h2 class="title">University of Wisconsin Oshkosh</h2>
           <h3 class="subtitle">WHERE EXCELLENCE AND OPPORTUNITY MEET.</h3>
@@ -151,7 +151,7 @@
 <!-- Weekly Feed -->
 <div class="row">
 
-  <div class="col-lg-4 col-sm-4" ng-controller="UWOTWPanelCtrl">
+  <div class="col-lg-4 col-sm-4" ng-controller="UwotwPanelCtrl">
     <div panel-story></div>
   </div>
 
@@ -173,11 +173,11 @@
     <div panel-story></div>
   </div>
 
-  <div class="col-lg-4 col-sm-4" ng-controller="MeetUWOPanelCtrl">
+  <div class="col-lg-4 col-sm-4" ng-controller="MeetUwoPanelCtrl">
     <div panel-story></div>
   </div>
 
-  <div class="col-lg-4 col-sm-4" ng-controller="TWIFPanelCtrl">
+  <div class="col-lg-4 col-sm-4" ng-controller="TwifPanelCtrl">
     <div panel-story></div>
   </div>
 
@@ -202,7 +202,6 @@
       $('#socialTabs a').click(function (e) {
         e.preventDefault();
         $(this).tab('show');
-        $("img.lazy").show().lazyload();
       })
     </script>
 
@@ -267,7 +266,7 @@
       <div class="tab-pane" id="youtube">
 
         <div class="deck-container">
-          <deck id="deck-youtube" ng-controller="YouTubeCtrl">
+          <deck id="deck-youtube" ng-controller="YoutubeCtrl">
 
               <slide ng-repeat="video in videos|limitTo:12">
                 <div class="twitter-article social-article">

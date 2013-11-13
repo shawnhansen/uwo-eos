@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Directive: topNavigation', function () {
+describe('Directive: panelStory', function () {
 
   // load the directive's module
   beforeEach(module('eosApp'));
@@ -13,8 +13,8 @@ describe('Directive: topNavigation', function () {
   }));
 
   /*it('should make hidden element visible', inject(function ($compile) {
-    element = angular.element('<top-navigation></top-navigation>');
+    element = angular.element('<panel-story></panel-story>');
     element = $compile(element)(scope);
-    expect(element.text()).toBe('this is the topNavigation directive');
+    expect(element.text()).toBe('this is the panelStory directive');
   }));*/
 });
