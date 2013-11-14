@@ -171,6 +171,10 @@ module.exports = function (grunt) {
             '<%= yeoman.dist %>/styles/{,*/}*.css',
             '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
             '!<%= yeoman.dist %>/images/parts/gradientyellow.png',
+            '!<%= yeoman.dist %>/images/pillar1.jpg',
+            '!<%= yeoman.dist %>/images/pillar2.jpg',
+            '!<%= yeoman.dist %>/images/pillar3.jpg',
+            '!<%= yeoman.dist %>/images/pillar4.jpg',
             '<%= yeoman.dist %>/styles/fonts/*'
           ]
         }
