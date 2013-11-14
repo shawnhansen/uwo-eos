@@ -5,7 +5,9 @@ angular.module('eosApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
-  'ngAnimate'
+  'ngAnimate',
+  'ngTouch',
+  'ngAnimate-animate.css'
 ])
   .config(function ($routeProvider,$locationProvider) {
     $locationProvider.html5Mode(true);
